@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login Simples</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900,900i');
+            @import url('https://fonts.googleapis.com/css?family=Exo:100,300,400,400i,500i');
+
+            .body {
+                position: fixed;
+                overflow-y: scroll;
+                width: 100%;
+                top: -20px;
+                left: -20;
+                right: -40px;
+                bottom: -40px;
+                height: auto;
+                width: auto;
+                background-image: url(http://sf.co.ua/16/02/wallpaper-1144d.jpg);
+                background-size: cover;
+                filter: blur(0px);
+            }
+
+            .header {
+                position: absolute;
+                top: calc(45%);
+                left: calc(50% - 330px);
+            }
+
+            .header div {
+                float: left;
+                color: #fff;
+                font-family: 'Exo', sans-serif;
+                font-size: 40px;
+                font-weight: 300;
+                text-shadow: 2px 2px black;
+                -webkit-animation: moving 3s;
+                animation: moving 3s;
+                -webkit-animation-delay: 0.2s;
+                    animation-delay: 0.2s;
+                -webkit-animation-fill-mode: backwards;
+                    animation-fill-mode: backwards;
+
+            }
+
+            @-webkit-keyframes moving {
+                from {
+                    opacity: 0;
+                    transform: scale(0.001);
+                }
+            }
+            @keyframes moving {
+                from {
+                    opacity: 0;
+                    transform: scale(0.001);
+                }
+            }
+
+            .header div span {
+                color: #F29E20;
+            }
+
+            .login{
+                position: absolute;
+                top: calc(50% - 75px);
+                left: calc(50% - 50px);
+                height: 150px;
+                width: 350px;
+                padding: 10px;
+            }
+
+            .login input[type=text]{
+                width: 250px;
+                height: 30px;
+                background: transparent;
+                border: 1px solid rgba(255,255,255,0.8);
+                border-radius: 10px;
+                color: #fff;
+                font-family: 'Exo', sans-serif;
+                font-weight: 300;
+                font-size: 20px;
+                padding: 4px;
+            }
+
+            .login input[type=password]{
+                width: 250px;
+                height: 30px;
+                background: transparent;
+                border: 1px solid rgba(255,255,255,0.8);
+                border-radius: 10px;
+                color: #fff;
+                font-family: 'Exo', sans-serif;
+                font-weight: 300;
+                font-size: 20px;
+                padding: 4px;
+                margin-top: 6px;
+            }
+
+
+            .login input[type=button]{
+                width: 250px;
+                height: 30px;
+                background: white;
+                border: 1px solid rgba(255,255,255,0.8);
+                border-radius: 10px;
+                color: black;
+                font-family: 'Exo', sans-serif;
+                font-weight: 300;
+                font-size: 20px;
+                margin-top: 10px;
+            }
+
+            .login input [type=button]:hover {
+                opacity: 0.4;
+            }
+
+            .login input [type=button]:active {
+                opacity: 0.6;
+            }
+
+            .login input [type=text]:focus , .login input [type=password]:focus {
+                outline: none;
+                border: 1px solid rgba (255,255,255,0.9);
+            }
+
+            .login input [type=button]:focus {
+                outline: none;
+            }
+
+            ::-webkit-input-placeholder{
+               color: rgba(255,255,255,0.8);
+                text-shadow: 1px 1px black;
+            }
+
+            ::-moz-input-placeholder{
+               color: rgba(255,255,255,0.8);
+            }
+
+        </style>
+    </head>
+    <body oncontextmenu="return false">
+        <div class="body"></div>
+            <div class="grad"></div>
+            <div class="header">
+                <div>Matheus <span>Mello</span></div>
+            </div>
+        <br>
+        <form name="login">
+            <div class="login">
+                <input type="text" placeholder="username" name="userid"><br>
+                <input type="password" placeholder="password" name="pswrd"><br>
+                <input type="button" onclick="check(this.form)" value="Login">
+            </div>
+        </form>
+
+        <script>
+            function check(form){
+                if(form.userid.value == "admin" && form.pswrd.value == "12345") {
+                    window.open('http://www.google.com')
+                }
+                else {
+                    alert("Incorret username or password.")
+                }
+            }
+        </script>
+    </body>
+</html>
